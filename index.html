@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#f4f4f4">
+    <title>Natsume Short URL</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="src/logo/apple-touch-icon-next.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="src/logo/favicon-32x32-next.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="src/logo/favicon-16x16-next.png">
+    <link rel="mask-icon" href="src/logo/logo.svg" color="#f4f4f4">
+    <link href="src/main.css" rel="stylesheet">
+    <link href="src/darkmode.css" rel="stylesheet">
+    <link href="src/font-awesome/css/all.min.css" rel="stylesheet">
+    <script src="src/darkmode.js" defer></script>
+    <script src="src/main.js" defer></script>
+</head>
+<body>
+    <div id="app">
+        <header class="header">
+            <div class="header__left"></div>
+            <div class="header__right">
+                <button id="btn-toggle-dark" aria-label="Toggle dark mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
+        </header>
+        <div class="cover">
+            <div class="cover__logo">
+                <h1><b>Natsume Short URL</b></h1>
+            </div>
+            <div class="cover__intro">
+                <p>A URL shortener service built with Google Apps Script.</p>
+            </div>
+        </div>
+        <main class="main">
+            <div class="post-list">
+                <div class="post-entry content-card">
+                    <form id="urlForm">
+                        <div class="form-group mb-3">
+                            <label for="longUrl" class="label-fancy">Enter the URL you want to shorten</label>
+                            <input class="form-control form-control-lg form-control-fancy" id="longUrl" type="text">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label class="label-fancy">Your short URL will be</label>
+                            <div class="form-row" id="textdiv">
+                                <div class="col-12 col-md-7 pr-md-0 pt-3">
+                                    <div class="v-select alias-dropdown vs--single" dir="auto">
+                                        <span>url.Na.cc/</span>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-5 pl-md-0 pt-3">
+                                    <input class="alias-input form-control" id="shortUrl" type="text" value="abc123" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mt-1">
+                            <button class="btn btn-block btn-t-green btn-xl" id="submitBtn" type="submit">Submit</button>
+                            <button class="btn btn-block btn-t-green btn-xl" id="copyBtn" type="button" style="display: none;">Copy</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+            <p><a>Natsume</a> © 2024</p>
+        </footer>
+    </div>
+    <script>
+        document.getElementById('urlForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Implement URL shortening logic here
+        });
+
+        function copyfunction() {
+            // Implement copy to clipboard functionality here
+        }
+    </script>
+</html>
